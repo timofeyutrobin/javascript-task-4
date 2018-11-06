@@ -4,7 +4,7 @@
  * Сделано задание на звездочку
  * Реализованы методы several и through
  */
-const isStar = false;
+const isStar = true;
 
 class Event {
 
@@ -42,7 +42,8 @@ class EventList {
 
     removeAll(eventName, context) {
         this.events = this.events.filter(event => {
-            return !event.eventName.startsWith(eventName) ||
+            return !event.eventName.startsWith(`${eventName}.`) &&
+                event.eventName !== eventName ||
                 event.context !== context;
         });
     }

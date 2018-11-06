@@ -8,13 +8,16 @@ const isStar = true;
 
 class Event {
 
-    // params = { eventName, context, handler, times, frequency };
+    /**
+     * Constructor
+     * @param {Object} params { eventName, context, handler, times, frequency }
+     */
     constructor(params) {
         this.eventName = params.event;
         this.context = params.context;
         this.handler = params.handler;
-        this.times = params.times || Infinity;
-        this.frequency = params.frequency || 1;
+        this.times = params.times >= 0 ? params.times : Infinity;
+        this.frequency = params.frequency >= 0 ? params.frequency : 1;
 
         this.callsCount = 0;
     }

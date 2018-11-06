@@ -16,8 +16,8 @@ class Event {
         this.eventName = params.event;
         this.context = params.context;
         this.handler = params.handler;
-        this.times = params.times >= 0 ? params.times : Infinity;
-        this.frequency = params.frequency >= 0 ? params.frequency : 1;
+        this.times = params.times > 0 ? params.times : Infinity;
+        this.frequency = params.frequency > 0 ? params.frequency : 1;
 
         this.callsCount = 0;
     }
